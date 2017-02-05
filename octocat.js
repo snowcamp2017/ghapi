@@ -4,12 +4,9 @@ class GitHubClient {
   constructor({baseUri, token}) {
     this.baseUri = baseUri;
     /*
-      GitHub .com         https://api.github.com
-      GitHub Enterprise   http://github.at.home/api/v3
+      GitHub .com > https://api.github.com | GitHub Enterprise | http://your.domain.name/api/v3
     */
-    this.credentials = token !== null && token.length > 0 ?
-      "token" + ' ' + token :
-      null;
+    this.credentials = token !== null && token.length > 0 ? "token" + ' ' + token : null;
     this.headers = {
       "Content-Type": "application/json",
       "Accept": "application/vnd.github.v3.full+json",
